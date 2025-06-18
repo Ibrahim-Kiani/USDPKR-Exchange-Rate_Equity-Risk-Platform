@@ -1,0 +1,75 @@
+[2025-06-18T11:03:35.415+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T11:03:35.441+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T10:55:02.444501+00:00 [queued]>
+[2025-06-18T11:03:35.448+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T10:55:02.444501+00:00 [queued]>
+[2025-06-18T11:03:35.449+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-06-18T11:03:35.463+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_stacked> on 2025-06-18 10:55:02.444501+00:00
+[2025-06-18T11:03:35.468+0000] {standard_task_runner.py:63} INFO - Started process 1847 to run task
+[2025-06-18T11:03:35.471+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'train_stacked', 'manual__2025-06-18T10:55:02.444501+00:00', '--job-id', '592', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpz96wrar9']
+[2025-06-18T11:03:35.473+0000] {standard_task_runner.py:91} INFO - Job 592: Subtask train_stacked
+[2025-06-18T11:03:35.513+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T10:55:02.444501+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T11:03:35.618+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='train_stacked' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T10:55:02.444501+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T10:55:02.444501+00:00'
+[2025-06-18T11:03:35.619+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T11:03:35.654+0000] {model_steps.py:869} ERROR - Error in train_stacked_model: Found array with 0 sample(s) (shape=(0, 45)) while a minimum of 1 is required by Lasso.
+[2025-06-18T11:03:35.655+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T11:03:35.655+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/model_steps.py", line 860, in train_stacked_model
+    stacked_model.fit(X_train, y_train)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/ensemble/_stacking.py", line 1043, in fit
+    return super().fit(X, y, **fit_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1363, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/ensemble/_stacking.py", line 211, in fit
+    self.estimators_ = Parallel(n_jobs=self.n_jobs)(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 82, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/joblib/parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/joblib/parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 147, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/ensemble/_base.py", line 39, in _fit_single_estimator
+    estimator.fit(X, y, **fit_params)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1363, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/linear_model/_coordinate_descent.py", line 982, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1368, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1128, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 45)) while a minimum of 1 is required by Lasso.
+[2025-06-18T11:03:35.672+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=usdpkr_forecasting_modular, task_id=train_stacked, run_id=manual__2025-06-18T10:55:02.444501+00:00, execution_date=20250618T105502, start_date=20250618T110335, end_date=20250618T110335
+[2025-06-18T11:03:35.681+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 592 for task train_stacked (Found array with 0 sample(s) (shape=(0, 45)) while a minimum of 1 is required by Lasso.; 1847)
+[2025-06-18T11:03:35.724+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-18T11:03:35.743+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T11:03:35.747+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

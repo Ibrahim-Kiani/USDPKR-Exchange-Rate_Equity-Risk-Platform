@@ -1,0 +1,46 @@
+[2025-06-18T15:29:43.971+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T15:29:43.999+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kse100_forecasting.feature_engineering manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:44.008+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kse100_forecasting.feature_engineering manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:44.010+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-06-18T15:29:44.037+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): feature_engineering> on 2025-06-18 15:29:29.025633+00:00
+[2025-06-18T15:29:44.045+0000] {standard_task_runner.py:63} INFO - Started process 1737 to run task
+[2025-06-18T15:29:44.048+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'kse100_forecasting', 'feature_engineering', 'manual__2025-06-18T15:29:29.025633+00:00', '--job-id', '953', '--raw', '--subdir', 'DAGS_FOLDER/kse100_forecasting_dag.py', '--cfg-path', '/tmp/tmp2j11sj4s']
+[2025-06-18T15:29:44.051+0000] {standard_task_runner.py:91} INFO - Job 953: Subtask feature_engineering
+[2025-06-18T15:29:44.097+0000] {task_command.py:426} INFO - Running <TaskInstance: kse100_forecasting.feature_engineering manual__2025-06-18T15:29:29.025633+00:00 [running]> on host f55656462970
+[2025-06-18T15:29:44.184+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kse100_forecasting' AIRFLOW_CTX_TASK_ID='feature_engineering' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T15:29:29.025633+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T15:29:29.025633+00:00'
+[2025-06-18T15:29:44.185+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T15:29:44.196+0000] {transform.py:269} INFO - Loading DataFrame from path: /opt/***/dataKse/raw/merged_data.csv
+[2025-06-18T15:29:44.203+0000] {transform.py:272} INFO - Starting feature engineering. Input DataFrame shape: (196, 12)
+[2025-06-18T15:29:44.203+0000] {transform.py:273} INFO - Input DataFrame columns: ['DATE', 'GOLD', 'FOREX_RESERVES', 'INFLATION_YOY', 'OIL', 'INTEREST_RATE', 'KSE100', 'USDPKR', 'M2', 'YEAR', 'MONTH', 'QUARTER']
+[2025-06-18T15:29:44.205+0000] {transform.py:274} INFO - Input DataFrame dtypes:
+DATE               object
+GOLD              float64
+FOREX_RESERVES    float64
+INFLATION_YOY     float64
+OIL               float64
+INTEREST_RATE     float64
+KSE100            float64
+USDPKR            float64
+M2                float64
+YEAR                int64
+MONTH               int64
+QUARTER             int64
+dtype: object
+[2025-06-18T15:29:44.205+0000] {transform.py:277} INFO - Converting DATE to datetime
+[2025-06-18T15:29:44.209+0000] {transform.py:281} INFO - Creating time-based features
+[2025-06-18T15:29:44.211+0000] {transform.py:287} INFO - Setting DATE as index and filtering years > 2004
+[2025-06-18T15:29:44.213+0000] {transform.py:290} INFO - DataFrame shape after year filtering: (196, 11)
+[2025-06-18T15:29:44.213+0000] {transform.py:293} INFO - Handling missing values and creating NA flags
+[2025-06-18T15:29:44.214+0000] {transform.py:297} INFO - Creating cyclical month features
+[2025-06-18T15:29:44.216+0000] {transform.py:302} INFO - Creating economic features
+[2025-06-18T15:29:44.217+0000] {transform.py:308} INFO - Creating lag features
+[2025-06-18T15:29:44.224+0000] {transform.py:318} INFO - Creating rolling statistics
+[2025-06-18T15:29:44.227+0000] {transform.py:327} INFO - Resetting index
+[2025-06-18T15:29:44.240+0000] {transform.py:337} INFO - Feature engineering complete. Final DataFrame shape: (184, 47)
+[2025-06-18T15:29:44.241+0000] {transform.py:338} INFO - Final DataFrame columns: ['DATE', 'GOLD', 'FOREX_RESERVES', 'INFLATION_YOY', 'OIL', 'INTEREST_RATE', 'KSE100', 'USDPKR', 'M2', 'YEAR', 'MONTH', 'QUARTER', 'MONTH_SIN', 'MONTH_COS', 'USDPKR_diff', 'REAL_INTEREST', 'OIL_IN_PKR', 'KSE100_lag1', 'KSE100_lag3', 'KSE100_lag12', 'INFLATION_YOY_lag1', 'INFLATION_YOY_lag3', 'INFLATION_YOY_lag12', 'INTEREST_RATE_lag1', 'INTEREST_RATE_lag3', 'INTEREST_RATE_lag12', 'USDPKR_lag1', 'USDPKR_lag3', 'USDPKR_lag12', 'OIL_lag1', 'OIL_lag3', 'OIL_lag12', 'FOREX_RESERVES_lag1', 'FOREX_RESERVES_lag3', 'FOREX_RESERVES_lag12', 'GOLD_lag1', 'GOLD_lag3', 'GOLD_lag12', 'M2_lag1', 'M2_lag3', 'M2_lag12', 'KSE100_roll_mean3', 'KSE100_roll_std3', 'OIL_roll_mean3', 'OIL_roll_std3', 'GOLD_roll_mean3', 'GOLD_roll_std3']
+[2025-06-18T15:29:44.241+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/dataKse/raw/engineered_features.csv
+[2025-06-18T15:29:44.242+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T15:29:44.260+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=kse100_forecasting, task_id=feature_engineering, run_id=manual__2025-06-18T15:29:29.025633+00:00, execution_date=20250618T152929, start_date=20250618T152944, end_date=20250618T152944
+[2025-06-18T15:29:44.302+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T15:29:44.328+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T15:29:44.331+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

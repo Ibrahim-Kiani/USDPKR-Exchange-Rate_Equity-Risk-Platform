@@ -1,0 +1,122 @@
+[2025-05-13T19:37:09.912+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-13T19:37:09.943+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inflation_forecasting.prepare_data manual__2025-05-13T19:36:50.482892+00:00 [queued]>
+[2025-05-13T19:37:09.952+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inflation_forecasting.prepare_data manual__2025-05-13T19:36:50.482892+00:00 [queued]>
+[2025-05-13T19:37:09.953+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-13T19:37:09.975+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): prepare_data> on 2025-05-13 19:36:50.482892+00:00
+[2025-05-13T19:37:09.983+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'inflation_forecasting', 'prepare_data', 'manual__2025-05-13T19:36:50.482892+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/inflation_forecasting_dag.py', '--cfg-path', '/tmp/tmph0tgqnzo']
+[2025-05-13T19:37:09.984+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=726) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-13T19:37:09.985+0000] {standard_task_runner.py:91} INFO - Job 128: Subtask prepare_data
+[2025-05-13T19:37:09.986+0000] {standard_task_runner.py:63} INFO - Started process 733 to run task
+[2025-05-13T19:37:09.999+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-13T19:37:10.031+0000] {task_command.py:426} INFO - Running <TaskInstance: inflation_forecasting.prepare_data manual__2025-05-13T19:36:50.482892+00:00 [running]> on host bab02daaed98
+[2025-05-13T19:37:10.320+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='inflation_forecasting' AIRFLOW_CTX_TASK_ID='prepare_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T19:36:50.482892+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T19:36:50.482892+00:00'
+[2025-05-13T19:37:10.321+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-13T19:37:10.365+0000] {logging_mixin.py:188} INFO - Loaded data with shape: (1337, 67)
+[2025-05-13T19:37:10.366+0000] {logging_mixin.py:188} INFO - Columns in dataframe: ['CPI', 'Month', 'DCOILWTICO', 'FEDFUNDS', 'M2SL', 'PERMIT', 'PPIACO', 'CPI_lag_1', 'CPI_lag_3', 'CPI_lag_6', 'CPI_lag_12', 'DCOILWTICO_lag_1', 'DCOILWTICO_lag_3', 'DCOILWTICO_lag_6', 'DCOILWTICO_lag_12', 'FEDFUNDS_lag_1', 'FEDFUNDS_lag_3', 'FEDFUNDS_lag_6', 'FEDFUNDS_lag_12', 'M2SL_lag_1', 'M2SL_lag_3', 'M2SL_lag_6', 'M2SL_lag_12', 'PERMIT_lag_1', 'PERMIT_lag_3', 'PERMIT_lag_6', 'PERMIT_lag_12', 'PPIACO_lag_1', 'PPIACO_lag_3', 'PPIACO_lag_6', 'PPIACO_lag_12', 'CPI_rolling_mean_3', 'CPI_rolling_std_3', 'CPI_rolling_mean_6', 'CPI_rolling_std_6', 'CPI_rolling_mean_12', 'CPI_rolling_std_12', 'DCOILWTICO_rolling_mean_3', 'DCOILWTICO_rolling_std_3', 'DCOILWTICO_rolling_mean_6', 'DCOILWTICO_rolling_std_6', 'DCOILWTICO_rolling_mean_12', 'DCOILWTICO_rolling_std_12', 'FEDFUNDS_rolling_mean_3', 'FEDFUNDS_rolling_std_3', 'FEDFUNDS_rolling_mean_6', 'FEDFUNDS_rolling_std_6', 'FEDFUNDS_rolling_mean_12', 'FEDFUNDS_rolling_std_12', 'M2SL_rolling_mean_3', 'M2SL_rolling_std_3', 'M2SL_rolling_mean_6', 'M2SL_rolling_std_6', 'M2SL_rolling_mean_12', 'M2SL_rolling_std_12', 'PERMIT_rolling_mean_3', 'PERMIT_rolling_std_3', 'PERMIT_rolling_mean_6', 'PERMIT_rolling_std_6', 'PERMIT_rolling_mean_12', 'PERMIT_rolling_std_12', 'PPIACO_rolling_mean_3', 'PPIACO_rolling_std_3', 'PPIACO_rolling_mean_6', 'PPIACO_rolling_std_6', 'PPIACO_rolling_mean_12', 'PPIACO_rolling_std_12']
+[2025-05-13T19:37:10.368+0000] {logging_mixin.py:188} INFO - Training data shape: (1069, 65), Test data shape: (268, 65)
+[2025-05-13T19:37:10.377+0000] {python.py:237} INFO - Done. Returned value was: {'X_train':             DCOILWTICO  FEDFUNDS  ...  PPIACO_rolling_mean_12  PPIACO_rolling_std_12
+DATE                              ...                                               
+1914-01-31       18.95      0.80  ...               12.000000               0.120605
+1914-02-28       18.95      0.80  ...               11.983333               0.133712
+1914-03-31       18.95      0.80  ...               11.958333               0.156428
+1914-04-30       18.95      0.80  ...               11.933333               0.172328
+1914-05-31       18.95      0.80  ...               11.908333               0.197523
+...                ...       ...  ...                     ...                    ...
+2002-09-30       23.95      1.75  ...              130.200000               1.320468
+2002-10-31       23.95      1.75  ...              130.441667               1.580252
+2002-11-30       23.95      1.34  ...              130.716667               1.737728
+2002-12-31       23.95      1.24  ...              131.116667               1.629742
+2003-01-31       23.95      1.24  ...              131.683333               1.809487
+
+[1069 rows x 65 columns], 'X_test':             DCOILWTICO  FEDFUNDS  ...  PPIACO_rolling_mean_12  PPIACO_rolling_std_12
+DATE                              ...                                               
+2003-02-28       23.95      1.26  ...              132.450000               2.198967
+2003-03-31       23.95      1.25  ...              133.400000               3.189471
+2003-04-30       23.95      1.26  ...              133.900000               3.215022
+2003-05-31       23.95      1.26  ...              134.391667               3.148292
+2003-06-30       23.95      1.22  ...              134.983333               3.099218
+...                ...       ...  ...                     ...                    ...
+2025-01-31       23.95      4.33  ...              255.067083               1.673703
+2025-02-28       23.95      4.33  ...              255.473667               2.158668
+2025-03-31       23.95      4.33  ...              255.785500               2.359893
+2025-04-30       23.95      4.33  ...              255.940417               2.502029
+2025-05-31       23.95      4.33  ...              256.234083               2.625458
+
+[268 rows x 65 columns], 'y_train': DATE
+1914-01-31    0.000000
+1914-02-28    0.000000
+1914-03-31    0.000000
+1914-04-30    0.000000
+1914-05-31    0.000000
+                ...   
+2002-09-30    0.166021
+2002-10-31    0.165746
+2002-11-30    0.000000
+2002-12-31   -0.220629
+2003-01-31    0.442233
+Name: CPI, Length: 1069, dtype: float64, 'y_test': DATE
+2003-02-28    0.770501
+2003-03-31    0.600765
+2003-04-30   -0.217155
+2003-05-31   -0.163221
+2003-06-30    0.108992
+                ...   
+2025-01-31    0.646417
+2025-02-28    0.646417
+2025-03-31    0.646417
+2025-04-30    0.646417
+2025-05-31    0.646417
+Name: CPI, Length: 268, dtype: float64}
+[2025-05-13T19:37:10.498+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-13T19:37:10.546+0000] {xcom.py:675} ERROR - Object of type Series is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2025-05-13T19:37:10.547+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 189, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'pandas.core.series.Series'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Series is not JSON serializable
+[2025-05-13T19:37:10.556+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=inflation_forecasting, task_id=prepare_data, run_id=manual__2025-05-13T19:36:50.482892+00:00, execution_date=20250513T193650, start_date=20250513T193709, end_date=20250513T193710
+[2025-05-13T19:37:10.567+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 128 for task prepare_data (Object of type Series is not JSON serializable; 733)
+[2025-05-13T19:37:10.601+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-05-13T19:37:10.760+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T19:37:10.765+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

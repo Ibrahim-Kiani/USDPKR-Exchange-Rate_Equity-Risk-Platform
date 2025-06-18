@@ -1,0 +1,34 @@
+[2025-05-13T19:49:57.468+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-13T19:49:57.496+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inflation_forecasting.load_data manual__2025-05-13T19:49:40.116966+00:00 [queued]>
+[2025-05-13T19:49:57.506+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inflation_forecasting.load_data manual__2025-05-13T19:49:40.116966+00:00 [queued]>
+[2025-05-13T19:49:57.507+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-13T19:49:57.522+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_data> on 2025-05-13 19:49:40.116966+00:00
+[2025-05-13T19:49:57.532+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1054) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-13T19:49:57.531+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'inflation_forecasting', 'load_data', 'manual__2025-05-13T19:49:40.116966+00:00', '--job-id', '138', '--raw', '--subdir', 'DAGS_FOLDER/inflation_forecasting_dag.py', '--cfg-path', '/tmp/tmpd1n5gcgb']
+[2025-05-13T19:49:57.533+0000] {standard_task_runner.py:63} INFO - Started process 1061 to run task
+[2025-05-13T19:49:57.533+0000] {standard_task_runner.py:91} INFO - Job 138: Subtask load_data
+[2025-05-13T19:49:57.547+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-13T19:49:57.582+0000] {task_command.py:426} INFO - Running <TaskInstance: inflation_forecasting.load_data manual__2025-05-13T19:49:40.116966+00:00 [running]> on host bab02daaed98
+[2025-05-13T19:49:57.845+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='inflation_forecasting' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T19:49:40.116966+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T19:49:40.116966+00:00'
+[2025-05-13T19:49:57.846+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-13T19:49:57.892+0000] {logging_mixin.py:188} INFO - Loaded data with shape: (1337, 67)
+[2025-05-13T19:49:57.892+0000] {python.py:237} INFO - Done. Returned value was:                  CPI    Month  ...  PPIACO_rolling_mean_12  PPIACO_rolling_std_12
+DATE                           ...                                               
+1914-01-31  0.000000  1955-02  ...               12.000000               0.120605
+1914-02-28  0.000000  1955-02  ...               11.983333               0.133712
+1914-03-31  0.000000  1955-02  ...               11.958333               0.156428
+1914-04-30  0.000000  1955-02  ...               11.933333               0.172328
+1914-05-31  0.000000  1955-02  ...               11.908333               0.197523
+...              ...      ...  ...                     ...                    ...
+2025-01-31  0.646417  2024-03  ...              255.067083               1.673703
+2025-02-28  0.646417  2024-03  ...              255.473667               2.158668
+2025-03-31  0.646417  2024-03  ...              255.785500               2.359893
+2025-04-30  0.646417  2024-03  ...              255.940417               2.502029
+2025-05-31  0.646417  2024-03  ...              256.234083               2.625458
+
+[1337 rows x 67 columns]
+[2025-05-13T19:49:57.955+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-13T19:49:58.053+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=inflation_forecasting, task_id=load_data, run_id=manual__2025-05-13T19:49:40.116966+00:00, execution_date=20250513T194940, start_date=20250513T194957, end_date=20250513T194958
+[2025-05-13T19:49:58.109+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-13T19:49:58.281+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T19:49:58.284+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

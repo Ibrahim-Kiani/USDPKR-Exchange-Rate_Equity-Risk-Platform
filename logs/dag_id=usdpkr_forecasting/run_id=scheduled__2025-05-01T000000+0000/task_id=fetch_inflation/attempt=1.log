@@ -1,0 +1,19 @@
+[2025-06-18T15:25:05.304+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T15:25:05.371+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_inflation scheduled__2025-05-01T00:00:00+00:00 [queued]>
+[2025-06-18T15:25:05.389+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_inflation scheduled__2025-05-01T00:00:00+00:00 [queued]>
+[2025-06-18T15:25:05.390+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2025-06-18T15:25:05.415+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_inflation> on 2025-05-01 00:00:00+00:00
+[2025-06-18T15:25:05.428+0000] {standard_task_runner.py:63} INFO - Started process 1231 to run task
+[2025-06-18T15:25:05.431+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting', 'fetch_inflation', 'scheduled__2025-05-01T00:00:00+00:00', '--job-id', '921', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpplnb6pzu']
+[2025-06-18T15:25:05.437+0000] {standard_task_runner.py:91} INFO - Job 921: Subtask fetch_inflation
+[2025-06-18T15:25:05.520+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting.fetch_inflation scheduled__2025-05-01T00:00:00+00:00 [running]> on host f55656462970
+[2025-06-18T15:25:05.642+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting' AIRFLOW_CTX_TASK_ID='fetch_inflation' AIRFLOW_CTX_EXECUTION_DATE='2025-05-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-01T00:00:00+00:00'
+[2025-06-18T15:25:05.645+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T15:25:05.661+0000] {ingest.py:130} INFO - Fetching 'INFLATION_YOY' from IMF (ID: PCPI_IX)...
+[2025-06-18T15:25:07.403+0000] {ingest.py:171} INFO - Saved INFLATION_YOY data to /opt/***/data/raw/INFLATION.csv
+[2025-06-18T15:25:07.404+0000] {ingest.py:172} INFO - Date range: 1957-01-01 to 2025-05-01
+[2025-06-18T15:25:07.405+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/raw/INFLATION.csv
+[2025-06-18T15:25:07.405+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T15:25:07.512+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting, task_id=fetch_inflation, run_id=scheduled__2025-05-01T00:00:00+00:00, execution_date=20250501T000000, start_date=20250618T152505, end_date=20250618T152507
+[2025-06-18T15:25:07.668+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T15:25:07.684+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

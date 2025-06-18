@@ -1,0 +1,20 @@
+[2025-06-18T10:47:07.866+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T10:47:07.959+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_m2 manual__2025-06-18T10:47:00.733380+00:00 [queued]>
+[2025-06-18T10:47:07.987+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_m2 manual__2025-06-18T10:47:00.733380+00:00 [queued]>
+[2025-06-18T10:47:07.991+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-18T10:47:08.087+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_m2> on 2025-06-18 10:47:00.733380+00:00
+[2025-06-18T10:47:08.102+0000] {standard_task_runner.py:63} INFO - Started process 836 to run task
+[2025-06-18T10:47:08.132+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'fetch_m2', 'manual__2025-06-18T10:47:00.733380+00:00', '--job-id', '534', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpxb75abon']
+[2025-06-18T10:47:08.148+0000] {standard_task_runner.py:91} INFO - Job 534: Subtask fetch_m2
+[2025-06-18T10:47:08.325+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.fetch_m2 manual__2025-06-18T10:47:00.733380+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T10:47:08.615+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='fetch_m2' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T10:47:00.733380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T10:47:00.733380+00:00'
+[2025-06-18T10:47:08.651+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T10:47:08.696+0000] {ingest.py:193} INFO - Generating placeholder data for SBP series: M2...
+[2025-06-18T10:47:08.859+0000] {ingest.py:214} INFO - Saved placeholder M2 data to /opt/***/data/raw/M2.csv
+[2025-06-18T10:47:08.861+0000] {ingest.py:215} INFO - Date range: 2005-06-30 to 2025-05-31
+[2025-06-18T10:47:08.863+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/raw/M2.csv
+[2025-06-18T10:47:08.875+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T10:47:09.006+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting_modular, task_id=fetch_m2, run_id=manual__2025-06-18T10:47:00.733380+00:00, execution_date=20250618T104700, start_date=20250618T104707, end_date=20250618T104709
+[2025-06-18T10:47:09.207+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T10:47:09.270+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T10:47:09.291+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

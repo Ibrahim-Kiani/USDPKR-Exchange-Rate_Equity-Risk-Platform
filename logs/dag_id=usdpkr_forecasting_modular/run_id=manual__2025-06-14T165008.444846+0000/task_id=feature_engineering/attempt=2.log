@@ -1,0 +1,48 @@
+[2025-06-14T16:52:05.551+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T16:52:05.578+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T16:50:08.444846+00:00 [queued]>
+[2025-06-14T16:52:05.586+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T16:50:08.444846+00:00 [queued]>
+[2025-06-14T16:52:05.587+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2025-06-14T16:52:05.603+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): feature_engineering> on 2025-06-14 16:50:08.444846+00:00
+[2025-06-14T16:52:05.608+0000] {standard_task_runner.py:63} INFO - Started process 427 to run task
+[2025-06-14T16:52:05.611+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'feature_engineering', 'manual__2025-06-14T16:50:08.444846+00:00', '--job-id', '317', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpxqb0xg_1']
+[2025-06-14T16:52:05.614+0000] {standard_task_runner.py:91} INFO - Job 317: Subtask feature_engineering
+[2025-06-14T16:52:05.656+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T16:50:08.444846+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T16:52:05.783+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='feature_engineering' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T16:50:08.444846+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T16:50:08.444846+00:00'
+[2025-06-14T16:52:05.784+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T16:52:05.795+0000] {transform.py:340} ERROR - Error in engineer_features: 'str' object has no attribute 'shape'
+[2025-06-14T16:52:05.796+0000] {transform.py:341} ERROR - Error type: <class 'AttributeError'>
+[2025-06-14T16:52:05.797+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T16:52:05.797+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/inflation_modules/transform.py", line 271, in engineer_features
+    logging.info(f"Starting feature engineering. Input DataFrame shape: {df.shape}")
+                                                                         ^^^^^^^^
+AttributeError: 'str' object has no attribute 'shape'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/transform.py", line 342, in engineer_features
+    logging.error(f"DataFrame info at time of error:\n{df.info()}")
+                                                       ^^^^^^^
+AttributeError: 'str' object has no attribute 'info'
+[2025-06-14T16:52:05.812+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=feature_engineering, run_id=manual__2025-06-14T16:50:08.444846+00:00, execution_date=20250614T165008, start_date=20250614T165205, end_date=20250614T165205
+[2025-06-14T16:52:05.822+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 317 for task feature_engineering ('str' object has no attribute 'info'; 427)
+[2025-06-14T16:52:05.864+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T16:52:05.886+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T16:52:05.889+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,20 @@
+[2025-06-18T15:29:35.973+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T15:29:36.146+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kse100_forecasting.fetch_interest_rate manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:36.157+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kse100_forecasting.fetch_interest_rate manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:36.159+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-18T15:29:36.196+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_interest_rate> on 2025-06-18 15:29:29.025633+00:00
+[2025-06-18T15:29:36.207+0000] {standard_task_runner.py:63} INFO - Started process 1696 to run task
+[2025-06-18T15:29:36.212+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'kse100_forecasting', 'fetch_interest_rate', 'manual__2025-06-18T15:29:29.025633+00:00', '--job-id', '947', '--raw', '--subdir', 'DAGS_FOLDER/kse100_forecasting_dag.py', '--cfg-path', '/tmp/tmplh0bg14i']
+[2025-06-18T15:29:36.217+0000] {standard_task_runner.py:91} INFO - Job 947: Subtask fetch_interest_rate
+[2025-06-18T15:29:36.283+0000] {task_command.py:426} INFO - Running <TaskInstance: kse100_forecasting.fetch_interest_rate manual__2025-06-18T15:29:29.025633+00:00 [running]> on host f55656462970
+[2025-06-18T15:29:36.410+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kse100_forecasting' AIRFLOW_CTX_TASK_ID='fetch_interest_rate' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T15:29:29.025633+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T15:29:29.025633+00:00'
+[2025-06-18T15:29:36.411+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T15:29:36.427+0000] {ingest.py:193} INFO - Generating placeholder data for SBP series: INTEREST_RATE...
+[2025-06-18T15:29:36.446+0000] {ingest.py:214} INFO - Saved placeholder INTEREST_RATE data to /opt/***/dataKse/raw/INTEREST_RATE.csv
+[2025-06-18T15:29:36.447+0000] {ingest.py:215} INFO - Date range: 2005-06-30 to 2025-05-31
+[2025-06-18T15:29:36.448+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/dataKse/raw/INTEREST_RATE.csv
+[2025-06-18T15:29:36.448+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T15:29:36.478+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=kse100_forecasting, task_id=fetch_interest_rate, run_id=manual__2025-06-18T15:29:29.025633+00:00, execution_date=20250618T152929, start_date=20250618T152936, end_date=20250618T152936
+[2025-06-18T15:29:36.505+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T15:29:36.550+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T15:29:36.554+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

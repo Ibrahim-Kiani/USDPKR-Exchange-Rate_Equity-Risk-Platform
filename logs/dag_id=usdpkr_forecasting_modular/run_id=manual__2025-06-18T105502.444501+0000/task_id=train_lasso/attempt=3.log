@@ -1,0 +1,46 @@
+[2025-06-18T11:02:41.222+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T11:02:41.249+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-18T10:55:02.444501+00:00 [queued]>
+[2025-06-18T11:02:41.257+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-18T10:55:02.444501+00:00 [queued]>
+[2025-06-18T11:02:41.257+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-06-18T11:02:41.269+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_lasso> on 2025-06-18 10:55:02.444501+00:00
+[2025-06-18T11:02:41.274+0000] {standard_task_runner.py:63} INFO - Started process 1816 to run task
+[2025-06-18T11:02:41.276+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'train_lasso', 'manual__2025-06-18T10:55:02.444501+00:00', '--job-id', '591', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpm31go31a']
+[2025-06-18T11:02:41.279+0000] {standard_task_runner.py:91} INFO - Job 591: Subtask train_lasso
+[2025-06-18T11:02:41.323+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-18T10:55:02.444501+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T11:02:41.429+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='train_lasso' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T10:55:02.444501+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T10:55:02.444501+00:00'
+[2025-06-18T11:02:41.431+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T11:02:41.460+0000] {logging_mixin.py:188} INFO - X_train shape: (0, 45)
+[2025-06-18T11:02:41.461+0000] {logging_mixin.py:188} INFO - y_train shape: (0, 1)
+[2025-06-18T11:02:41.463+0000] {logging_mixin.py:188} INFO - First few rows of X_train: Empty DataFrame
+Columns: [OIL, FOREX_RESERVES, INFLATION_YOY, GOLD, INTEREST_RATE, KSE100, M2, YEAR, MONTH, QUARTER, MONTH_SIN, MONTH_COS, USDPKR_diff, REAL_INTEREST, OIL_IN_PKR, KSE100_lag1, KSE100_lag3, KSE100_lag12, INFLATION_YOY_lag1, INFLATION_YOY_lag3, INFLATION_YOY_lag12, INTEREST_RATE_lag1, INTEREST_RATE_lag3, INTEREST_RATE_lag12, USDPKR_lag1, USDPKR_lag3, USDPKR_lag12, OIL_lag1, OIL_lag3, OIL_lag12, FOREX_RESERVES_lag1, FOREX_RESERVES_lag3, FOREX_RESERVES_lag12, GOLD_lag1, GOLD_lag3, GOLD_lag12, M2_lag1, M2_lag3, M2_lag12, KSE100_roll_mean3, KSE100_roll_std3, OIL_roll_mean3, OIL_roll_std3, GOLD_roll_mean3, GOLD_roll_std3]
+Index: []
+[2025-06-18T11:02:41.464+0000] {logging_mixin.py:188} INFO - First few rows of y_train: Empty DataFrame
+Columns: [USDPKR]
+Index: []
+[2025-06-18T11:02:41.464+0000] {model_steps.py:821} ERROR - Error in train_lasso_model: train_lasso_model: X_train or y_train is empty! Check your data pipeline.
+[2025-06-18T11:02:41.465+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T11:02:41.465+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/model_steps.py", line 802, in train_lasso_model
+    raise ValueError("train_lasso_model: X_train or y_train is empty! Check your data pipeline.")
+ValueError: train_lasso_model: X_train or y_train is empty! Check your data pipeline.
+[2025-06-18T11:02:41.480+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=usdpkr_forecasting_modular, task_id=train_lasso, run_id=manual__2025-06-18T10:55:02.444501+00:00, execution_date=20250618T105502, start_date=20250618T110241, end_date=20250618T110241
+[2025-06-18T11:02:41.494+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 591 for task train_lasso (train_lasso_model: X_train or y_train is empty! Check your data pipeline.; 1816)
+[2025-06-18T11:02:41.530+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-18T11:02:41.549+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T11:02:41.554+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

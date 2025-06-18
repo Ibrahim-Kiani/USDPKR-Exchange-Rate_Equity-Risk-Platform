@@ -1,0 +1,77 @@
+[2025-06-18T13:30:15.536+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T13:30:15.563+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T13:27:27.318368+00:00 [queued]>
+[2025-06-18T13:30:15.571+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T13:27:27.318368+00:00 [queued]>
+[2025-06-18T13:30:15.572+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2025-06-18T13:30:15.586+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_stacked> on 2025-06-18 13:27:27.318368+00:00
+[2025-06-18T13:30:15.591+0000] {standard_task_runner.py:63} INFO - Started process 8091 to run task
+[2025-06-18T13:30:15.594+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'train_stacked', 'manual__2025-06-18T13:27:27.318368+00:00', '--job-id', '750', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmps0yosprq']
+[2025-06-18T13:30:15.596+0000] {standard_task_runner.py:91} INFO - Job 750: Subtask train_stacked
+[2025-06-18T13:30:15.635+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T13:27:27.318368+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T13:30:15.701+0000] {abstractoperator.py:725} ERROR - Exception rendering Jinja template for task 'train_stacked', field 'op_kwargs'. Template: {'X_train_path': "{{ ti.xcom_pull(task_ids='prepare_data')[0] }}", 'y_train_path': "{{ ti.xcom_pull(task_ids='prepare_data')[1] }}", 'selected_features_path': "{{ ti.xcom_pull(task_ids='prepare_data')[2] }}", 'train_test_data_path': "{{ ti.xcom_pull(task_ids='prepare_data')[3] }}", 'output_dir': '/opt/***/data/models'}
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 717, in _do_render_template_fields
+    rendered_content = self.render_template(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 181, in render_template
+    return {k: self.render_template(v, context, jinja_env, oids) for k, v in value.items()}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 169, in render_template
+    return self._render(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 675, in _render
+    return super()._render(template, context, dag=dag)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 126, in _render
+    return render_template_to_string(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 289, in render_template_to_string
+    return render_template(template, cast(MutableMapping[str, Any], context), native=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 284, in render_template
+    return "".join(nodes)
+           ^^^^^^^^^^^^^^
+  File "<template>", line 12, in root
+  File "/home/airflow/.local/lib/python3.12/site-packages/jinja2/runtime.py", line 852, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: tuple object has no element 2
+[2025-06-18T13:30:15.703+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2479, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2633, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context, jinja_env=jinja_env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3094, in render_templates
+    original_task.render_template_fields(context, jinja_env)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 1336, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 717, in _do_render_template_fields
+    rendered_content = self.render_template(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 181, in render_template
+    return {k: self.render_template(v, context, jinja_env, oids) for k, v in value.items()}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 169, in render_template
+    return self._render(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 675, in _render
+    return super()._render(template, context, dag=dag)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 126, in _render
+    return render_template_to_string(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 289, in render_template_to_string
+    return render_template(template, cast(MutableMapping[str, Any], context), native=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 284, in render_template
+    return "".join(nodes)
+           ^^^^^^^^^^^^^^
+  File "<template>", line 12, in root
+  File "/home/airflow/.local/lib/python3.12/site-packages/jinja2/runtime.py", line 852, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: tuple object has no element 2
+[2025-06-18T13:30:15.710+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=train_stacked, run_id=manual__2025-06-18T13:27:27.318368+00:00, execution_date=20250618T132727, start_date=20250618T133015, end_date=20250618T133015
+[2025-06-18T13:30:15.719+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 750 for task train_stacked (tuple object has no element 2; 8091)
+[2025-06-18T13:30:15.727+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-18T13:30:15.746+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T13:30:15.748+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

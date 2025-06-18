@@ -1,0 +1,8 @@
+FROM apache/airflow:2.9.1
+
+# Copy and install your extra Python deps
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
+
+# (Optional) switch back to the airflow user
+USER airflow

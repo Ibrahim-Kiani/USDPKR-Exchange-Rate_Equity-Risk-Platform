@@ -1,0 +1,64 @@
+[2025-06-14T17:04:53.123+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T17:04:53.149+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T17:00:39.577250+00:00 [queued]>
+[2025-06-14T17:04:53.158+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T17:00:39.577250+00:00 [queued]>
+[2025-06-14T17:04:53.158+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-06-14T17:04:53.170+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): feature_engineering> on 2025-06-14 17:00:39.577250+00:00
+[2025-06-14T17:04:53.176+0000] {standard_task_runner.py:63} INFO - Started process 413 to run task
+[2025-06-14T17:04:53.178+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'feature_engineering', 'manual__2025-06-14T17:00:39.577250+00:00', '--job-id', '374', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmp8_qeb8ro']
+[2025-06-14T17:04:53.181+0000] {standard_task_runner.py:91} INFO - Job 374: Subtask feature_engineering
+[2025-06-14T17:04:53.224+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-14T17:00:39.577250+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T17:04:53.307+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='feature_engineering' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T17:00:39.577250+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T17:00:39.577250+00:00'
+[2025-06-14T17:04:53.308+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T17:04:53.319+0000] {transform.py:276} INFO - Loading DataFrame from path: /opt/***/data/raw/merged_data.csv
+[2025-06-14T17:04:53.329+0000] {transform.py:279} INFO - Starting feature engineering. Input DataFrame shape: (196, 9)
+[2025-06-14T17:04:53.330+0000] {transform.py:280} INFO - Input DataFrame columns: ['DATE', 'OIL', 'FOREX_RESERVES', 'INFLATION_YOY', 'GOLD', 'INTEREST_RATE', 'KSE100', 'USDPKR', 'M2']
+[2025-06-14T17:04:53.331+0000] {transform.py:281} INFO - Input DataFrame dtypes:
+DATE               object
+OIL               float64
+FOREX_RESERVES    float64
+INFLATION_YOY     float64
+GOLD              float64
+INTEREST_RATE     float64
+KSE100            float64
+USDPKR            float64
+M2                float64
+dtype: object
+[2025-06-14T17:04:53.332+0000] {transform.py:292} INFO - Creating time-based features
+[2025-06-14T17:04:53.333+0000] {transform.py:355} ERROR - Error in engineer_features: Can only use .dt accessor with datetimelike values
+[2025-06-14T17:04:53.333+0000] {transform.py:356} ERROR - Error type: <class 'AttributeError'>
+[2025-06-14T17:04:53.333+0000] {transform.py:358} ERROR - Input path: /opt/***/data/raw/merged_data.csv
+[2025-06-14T17:04:53.334+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T17:04:53.335+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/transform.py", line 293, in engineer_features
+    df['YEAR'] = df['DATE'].dt.year
+                 ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 6204, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/accessors.py", line 608, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+[2025-06-14T17:04:53.355+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=usdpkr_forecasting_modular, task_id=feature_engineering, run_id=manual__2025-06-14T17:00:39.577250+00:00, execution_date=20250614T170039, start_date=20250614T170453, end_date=20250614T170453
+[2025-06-14T17:04:53.365+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 374 for task feature_engineering (Can only use .dt accessor with datetimelike values; 413)
+[2025-06-14T17:04:53.392+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T17:04:53.414+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T17:04:53.416+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

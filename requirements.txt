@@ -1,0 +1,8 @@
+pandas
+pandas_datareader
+requests
+openpyxl
+scikit-learn
+numpy
+yfinance
+joblib

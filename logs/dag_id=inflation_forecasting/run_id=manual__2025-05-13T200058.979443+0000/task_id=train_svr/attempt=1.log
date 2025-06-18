@@ -1,0 +1,23 @@
+[2025-05-13T20:01:33.116+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-13T20:01:33.150+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inflation_forecasting.train_svr manual__2025-05-13T20:00:58.979443+00:00 [queued]>
+[2025-05-13T20:01:33.162+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inflation_forecasting.train_svr manual__2025-05-13T20:00:58.979443+00:00 [queued]>
+[2025-05-13T20:01:33.163+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-13T20:01:33.181+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_svr> on 2025-05-13 20:00:58.979443+00:00
+[2025-05-13T20:01:33.190+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1519) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-13T20:01:33.193+0000] {standard_task_runner.py:63} INFO - Started process 1539 to run task
+[2025-05-13T20:01:33.192+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'inflation_forecasting', 'train_svr', 'manual__2025-05-13T20:00:58.979443+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/inflation_forecasting_dag.py', '--cfg-path', '/tmp/tmpxfep3q_3']
+[2025-05-13T20:01:33.196+0000] {standard_task_runner.py:91} INFO - Job 163: Subtask train_svr
+[2025-05-13T20:01:33.213+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-13T20:01:33.250+0000] {task_command.py:426} INFO - Running <TaskInstance: inflation_forecasting.train_svr manual__2025-05-13T20:00:58.979443+00:00 [running]> on host bab02daaed98
+[2025-05-13T20:01:33.704+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='inflation_forecasting' AIRFLOW_CTX_TASK_ID='train_svr' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T20:00:58.979443+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T20:00:58.979443+00:00'
+[2025-05-13T20:01:33.705+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-13T20:01:33.725+0000] {logging_mixin.py:188} INFO - Loading selected features from /opt/***/data/model_output/selected_features.pkl
+[2025-05-13T20:01:33.725+0000] {logging_mixin.py:188} INFO - Loading train/test data from /opt/***/data/model_output/train_test_data.pkl
+[2025-05-13T20:01:33.754+0000] {logging_mixin.py:188} INFO - Using pre-optimized SVR parameters: {'C': 0.1, 'epsilon': 0.01}
+[2025-05-13T20:01:34.035+0000] {logging_mixin.py:188} INFO - SVR model saved to /opt/***/data/model_output/SVR.pkl
+[2025-05-13T20:01:34.050+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/model_output/SVR.pkl
+[2025-05-13T20:01:34.051+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-13T20:01:34.435+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=inflation_forecasting, task_id=train_svr, run_id=manual__2025-05-13T20:00:58.979443+00:00, execution_date=20250513T200058, start_date=20250513T200133, end_date=20250513T200134
+[2025-05-13T20:01:34.610+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-13T20:01:35.329+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T20:01:35.331+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

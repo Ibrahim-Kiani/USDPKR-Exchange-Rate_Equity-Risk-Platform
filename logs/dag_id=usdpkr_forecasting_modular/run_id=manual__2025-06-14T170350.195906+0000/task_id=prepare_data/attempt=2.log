@@ -1,0 +1,39 @@
+[2025-06-14T17:21:48.801+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T17:21:48.830+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.prepare_data manual__2025-06-14T17:03:50.195906+00:00 [queued]>
+[2025-06-14T17:21:48.838+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.prepare_data manual__2025-06-14T17:03:50.195906+00:00 [queued]>
+[2025-06-14T17:21:48.838+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2025-06-14T17:21:48.851+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): prepare_data> on 2025-06-14 17:03:50.195906+00:00
+[2025-06-14T17:21:48.857+0000] {standard_task_runner.py:63} INFO - Started process 1529 to run task
+[2025-06-14T17:21:48.859+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'prepare_data', 'manual__2025-06-14T17:03:50.195906+00:00', '--job-id', '436', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpg4avtio6']
+[2025-06-14T17:21:48.862+0000] {standard_task_runner.py:91} INFO - Job 436: Subtask prepare_data
+[2025-06-14T17:21:48.906+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.prepare_data manual__2025-06-14T17:03:50.195906+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T17:21:48.991+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='prepare_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T17:03:50.195906+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T17:03:50.195906+00:00'
+[2025-06-14T17:21:48.992+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T17:21:49.003+0000] {transform.py:370} INFO - Loading DataFrame from /opt/***/data/raw/engineered_features.csv
+[2025-06-14T17:21:49.017+0000] {transform.py:419} ERROR - Error in prepare_data_for_modeling: Loaded DataFrame is empty
+[2025-06-14T17:21:49.017+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T17:21:49.018+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/transform.py", line 374, in prepare_data_for_modeling
+    raise ValueError("Loaded DataFrame is empty")
+ValueError: Loaded DataFrame is empty
+[2025-06-14T17:21:49.032+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=prepare_data, run_id=manual__2025-06-14T17:03:50.195906+00:00, execution_date=20250614T170350, start_date=20250614T172148, end_date=20250614T172149
+[2025-06-14T17:21:49.042+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 436 for task prepare_data (Loaded DataFrame is empty; 1529)
+[2025-06-14T17:21:49.073+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T17:21:49.095+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T17:21:49.098+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

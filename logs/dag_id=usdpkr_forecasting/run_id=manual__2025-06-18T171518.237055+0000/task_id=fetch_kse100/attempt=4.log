@@ -1,0 +1,42 @@
+[2025-06-18T17:23:33.951+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T17:23:33.978+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_kse100 manual__2025-06-18T17:15:18.237055+00:00 [queued]>
+[2025-06-18T17:23:33.986+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_kse100 manual__2025-06-18T17:15:18.237055+00:00 [queued]>
+[2025-06-18T17:23:33.987+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 6
+[2025-06-18T17:23:33.997+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_kse100> on 2025-06-18 17:15:18.237055+00:00
+[2025-06-18T17:23:34.003+0000] {standard_task_runner.py:63} INFO - Started process 4746 to run task
+[2025-06-18T17:23:34.005+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting', 'fetch_kse100', 'manual__2025-06-18T17:15:18.237055+00:00', '--job-id', '1021', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpyj6gp0e_']
+[2025-06-18T17:23:34.008+0000] {standard_task_runner.py:91} INFO - Job 1021: Subtask fetch_kse100
+[2025-06-18T17:23:34.047+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting.fetch_kse100 manual__2025-06-18T17:15:18.237055+00:00 [running]> on host 57c57e92cb28
+[2025-06-18T17:23:34.148+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting' AIRFLOW_CTX_TASK_ID='fetch_kse100' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T17:15:18.237055+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T17:15:18.237055+00:00'
+[2025-06-18T17:23:34.149+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T17:23:34.163+0000] {ingest.py:65} INFO - Fetching ^KSE from Yahoo Finance...
+[2025-06-18T17:23:47.603+0000] {multi.py:184} ERROR - 
+1 Failed download:
+[2025-06-18T17:23:47.604+0000] {multi.py:197} ERROR - ['^KSE']: Timeout('Failed to perform, curl: (28) Operation timed out after 10001 milliseconds with 153547 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+[2025-06-18T17:23:47.612+0000] {ingest.py:112} ERROR - Error fetching ^KSE: No data downloaded for ticker '^KSE'
+[2025-06-18T17:23:47.613+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T17:23:47.613+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/ingest.py", line 83, in fetch_yahoo_finance
+    raise ValueError(f"No data downloaded for ticker '{ticker}'")
+ValueError: No data downloaded for ticker '^KSE'
+[2025-06-18T17:23:47.624+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting, task_id=fetch_kse100, run_id=manual__2025-06-18T17:15:18.237055+00:00, execution_date=20250618T171518, start_date=20250618T172333, end_date=20250618T172347
+[2025-06-18T17:23:47.635+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 1021 for task fetch_kse100 (No data downloaded for ticker '^KSE'; 4746)
+[2025-06-18T17:23:47.649+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-18T17:23:47.671+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T17:23:47.673+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

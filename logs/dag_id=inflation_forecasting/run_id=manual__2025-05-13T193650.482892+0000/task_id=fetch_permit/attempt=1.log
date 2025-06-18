@@ -1,0 +1,21 @@
+[2025-05-13T19:36:56.741+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-13T19:36:56.811+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: inflation_forecasting.fetch_permit manual__2025-05-13T19:36:50.482892+00:00 [queued]>
+[2025-05-13T19:36:56.835+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: inflation_forecasting.fetch_permit manual__2025-05-13T19:36:50.482892+00:00 [queued]>
+[2025-05-13T19:36:56.837+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-13T19:36:56.871+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_permit> on 2025-05-13 19:36:50.482892+00:00
+[2025-05-13T19:36:56.883+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=644) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-05-13T19:36:56.894+0000] {standard_task_runner.py:63} INFO - Started process 690 to run task
+[2025-05-13T19:36:56.893+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'inflation_forecasting', 'fetch_permit', 'manual__2025-05-13T19:36:50.482892+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/inflation_forecasting_dag.py', '--cfg-path', '/tmp/tmp0dt5k2ke']
+[2025-05-13T19:36:56.898+0000] {standard_task_runner.py:91} INFO - Job 124: Subtask fetch_permit
+[2025-05-13T19:36:56.930+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-13T19:36:56.991+0000] {task_command.py:426} INFO - Running <TaskInstance: inflation_forecasting.fetch_permit manual__2025-05-13T19:36:50.482892+00:00 [running]> on host bab02daaed98
+[2025-05-13T19:36:57.553+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='inflation_forecasting' AIRFLOW_CTX_TASK_ID='fetch_permit' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T19:36:50.482892+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T19:36:50.482892+00:00'
+[2025-05-13T19:36:57.561+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-13T19:36:58.187+0000] {logging_mixin.py:188} INFO - PERMIT is already monthly with 783 rows
+[2025-05-13T19:36:58.190+0000] {logging_mixin.py:188} INFO - Date range for PERMIT: 1960-01-01 00:00:00 to 2025-03-01 00:00:00
+[2025-05-13T19:36:58.224+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-05-13T19:36:58.229+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-13T19:36:58.265+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=inflation_forecasting, task_id=fetch_permit, run_id=manual__2025-05-13T19:36:50.482892+00:00, execution_date=20250513T193650, start_date=20250513T193656, end_date=20250513T193658
+[2025-05-13T19:36:58.336+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-13T19:36:58.744+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T19:36:58.796+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

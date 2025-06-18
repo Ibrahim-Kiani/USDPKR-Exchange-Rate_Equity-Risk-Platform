@@ -1,0 +1,84 @@
+[2025-06-18T11:39:01.916+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T11:39:01.942+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-18T11:38:44.716652+00:00 [queued]>
+[2025-06-18T11:39:01.951+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-18T11:38:44.716652+00:00 [queued]>
+[2025-06-18T11:39:01.951+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-06-18T11:39:01.965+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): feature_engineering> on 2025-06-18 11:38:44.716652+00:00
+[2025-06-18T11:39:01.971+0000] {standard_task_runner.py:63} INFO - Started process 3275 to run task
+[2025-06-18T11:39:01.973+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'feature_engineering', 'manual__2025-06-18T11:38:44.716652+00:00', '--job-id', '623', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmp6itcn2pt']
+[2025-06-18T11:39:01.976+0000] {standard_task_runner.py:91} INFO - Job 623: Subtask feature_engineering
+[2025-06-18T11:39:02.015+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.feature_engineering manual__2025-06-18T11:38:44.716652+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T11:39:02.095+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='feature_engineering' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T11:38:44.716652+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T11:38:44.716652+00:00'
+[2025-06-18T11:39:02.097+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T11:39:02.108+0000] {transform.py:271} INFO - Loading DataFrame from path: /opt/***/data/raw/merged_data.csv
+[2025-06-18T11:39:02.126+0000] {transform.py:274} INFO - Starting feature engineering. Input DataFrame shape: (246, 17)
+[2025-06-18T11:39:02.126+0000] {transform.py:275} INFO - Input DataFrame columns: ['DATE', 'GOLD', 'FOREX_RESERVES', 'INFLATION_YOY', 'OIL', 'INTEREST_RATE', 'KSE100', 'USDPKR', 'M2', 'YEAR', 'MONTH', 'QUARTER', 'FOREX_RESERVES_naflag', 'INFLATION_YOY_naflag', 'INTEREST_RATE_naflag', 'KSE100_naflag', 'M2_naflag']
+[2025-06-18T11:39:02.128+0000] {transform.py:276} INFO - Input DataFrame dtypes:
+DATE                      object
+GOLD                     float64
+FOREX_RESERVES           float64
+INFLATION_YOY            float64
+OIL                      float64
+INTEREST_RATE            float64
+KSE100                   float64
+USDPKR                   float64
+M2                       float64
+YEAR                       int64
+MONTH                      int64
+QUARTER                    int64
+FOREX_RESERVES_naflag       bool
+INFLATION_YOY_naflag        bool
+INTEREST_RATE_naflag        bool
+KSE100_naflag               bool
+M2_naflag                   bool
+dtype: object
+[2025-06-18T11:39:02.128+0000] {transform.py:279} INFO - Converting DATE to datetime
+[2025-06-18T11:39:02.132+0000] {transform.py:283} INFO - Creating time-based features
+[2025-06-18T11:39:02.136+0000] {transform.py:289} INFO - Setting DATE as index and filtering years > 2004
+[2025-06-18T11:39:02.141+0000] {transform.py:292} INFO - DataFrame shape after year filtering: (246, 16)
+[2025-06-18T11:39:02.142+0000] {transform.py:295} INFO - Handling missing values and creating NA flags
+[2025-06-18T11:39:02.144+0000] {transform.py:304} INFO - Creating cyclical month features
+[2025-06-18T11:39:02.146+0000] {transform.py:309} INFO - Creating economic features
+[2025-06-18T11:39:02.147+0000] {transform.py:315} INFO - Creating lag features
+[2025-06-18T11:39:02.154+0000] {transform.py:325} INFO - Creating rolling statistics
+[2025-06-18T11:39:02.158+0000] {transform.py:334} INFO - Resetting index
+[2025-06-18T11:39:02.163+0000] {transform.py:349} ERROR - Error in engineer_features: [Errno 13] Permission denied: '/opt/***/data/raw/engineered_features.csv'
+[2025-06-18T11:39:02.164+0000] {transform.py:350} ERROR - Error type: <class 'PermissionError'>
+[2025-06-18T11:39:02.164+0000] {transform.py:351} ERROR - Input type: <class 'str'>
+[2025-06-18T11:39:02.165+0000] {transform.py:352} ERROR - Input value: /opt/***/data/raw/merged_data.csv
+[2025-06-18T11:39:02.165+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T11:39:02.166+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/transform.py", line 342, in engineer_features
+    df.to_csv(output_path, index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: '/opt/airflow/data/raw/engineered_features.csv'
+[2025-06-18T11:39:02.184+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=feature_engineering, run_id=manual__2025-06-18T11:38:44.716652+00:00, execution_date=20250618T113844, start_date=20250618T113901, end_date=20250618T113902
+[2025-06-18T11:39:02.193+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 623 for task feature_engineering ([Errno 13] Permission denied: '/opt/airflow/data/raw/engineered_features.csv'; 3275)
+[2025-06-18T11:39:02.226+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-18T11:39:02.247+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T11:39:02.250+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

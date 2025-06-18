@@ -1,0 +1,60 @@
+[2025-06-14T15:42:56.713+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T15:42:56.771+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_forex_reserves manual__2025-06-14T15:42:49.083514+00:00 [queued]>
+[2025-06-14T15:42:56.782+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_forex_reserves manual__2025-06-14T15:42:49.083514+00:00 [queued]>
+[2025-06-14T15:42:56.783+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-14T15:42:56.801+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_forex_reserves> on 2025-06-14 15:42:49.083514+00:00
+[2025-06-14T15:42:56.810+0000] {standard_task_runner.py:63} INFO - Started process 372 to run task
+[2025-06-14T15:42:56.816+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'fetch_forex_reserves', 'manual__2025-06-14T15:42:49.083514+00:00', '--job-id', '235', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpafe0054i']
+[2025-06-14T15:42:56.820+0000] {standard_task_runner.py:91} INFO - Job 235: Subtask fetch_forex_reserves
+[2025-06-14T15:42:56.872+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.fetch_forex_reserves manual__2025-06-14T15:42:49.083514+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T15:42:56.954+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='fetch_forex_reserves' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T15:42:49.083514+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T15:42:49.083514+00:00'
+[2025-06-14T15:42:56.955+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T15:42:56.967+0000] {ingest.py:193} INFO - Generating placeholder data for SBP series: FOREX_RESERVES...
+[2025-06-14T15:42:56.968+0000] {ingest.py:220} ERROR - Error generating placeholder data for FOREX_RESERVES: Invalid frequency: ME
+[2025-06-14T15:42:56.969+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T15:42:56.970+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "offsets.pyx", line 4447, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'ME'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "offsets.pyx", line 4549, in pandas._libs.tslibs.offsets.to_offset
+  File "offsets.pyx", line 4453, in pandas._libs.tslibs.offsets._get_offset
+ValueError: Invalid frequency: ME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/ingest.py", line 196, in fetch_sbp_placeholder
+    date_range = pd.date_range(start=start_date, end=end_date, freq='ME')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 1009, in date_range
+    dtarr = DatetimeArray._generate_range(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py", line 404, in _generate_range
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "offsets.pyx", line 4460, in pandas._libs.tslibs.offsets.to_offset
+  File "offsets.pyx", line 4557, in pandas._libs.tslibs.offsets.to_offset
+ValueError: Invalid frequency: ME
+[2025-06-14T15:42:56.982+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=fetch_forex_reserves, run_id=manual__2025-06-14T15:42:49.083514+00:00, execution_date=20250614T154249, start_date=20250614T154256, end_date=20250614T154256
+[2025-06-14T15:42:57.017+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 235 for task fetch_forex_reserves (Invalid frequency: ME; 372)
+[2025-06-14T15:42:57.067+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T15:42:57.089+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,17 @@
+[2025-06-18T15:33:33.582+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T15:33:33.610+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kse100_forecasting.merge_data manual__2025-06-18T15:33:18.394008+00:00 [queued]>
+[2025-06-18T15:33:33.621+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kse100_forecasting.merge_data manual__2025-06-18T15:33:18.394008+00:00 [queued]>
+[2025-06-18T15:33:33.622+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-18T15:33:33.637+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): merge_data> on 2025-06-18 15:33:18.394008+00:00
+[2025-06-18T15:33:33.643+0000] {standard_task_runner.py:63} INFO - Started process 2035 to run task
+[2025-06-18T15:33:33.646+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'kse100_forecasting', 'merge_data', 'manual__2025-06-18T15:33:18.394008+00:00', '--job-id', '967', '--raw', '--subdir', 'DAGS_FOLDER/kse100_forecasting_dag.py', '--cfg-path', '/tmp/tmph1xrlkcz']
+[2025-06-18T15:33:33.648+0000] {standard_task_runner.py:91} INFO - Job 967: Subtask merge_data
+[2025-06-18T15:33:33.692+0000] {task_command.py:426} INFO - Running <TaskInstance: kse100_forecasting.merge_data manual__2025-06-18T15:33:18.394008+00:00 [running]> on host f55656462970
+[2025-06-18T15:33:33.773+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kse100_forecasting' AIRFLOW_CTX_TASK_ID='merge_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T15:33:18.394008+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T15:33:18.394008+00:00'
+[2025-06-18T15:33:33.774+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T15:33:33.828+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/dataKse/raw/merged_data.csv
+[2025-06-18T15:33:33.829+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T15:33:33.849+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=kse100_forecasting, task_id=merge_data, run_id=manual__2025-06-18T15:33:18.394008+00:00, execution_date=20250618T153318, start_date=20250618T153333, end_date=20250618T153333
+[2025-06-18T15:33:33.899+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T15:33:33.923+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T15:33:33.926+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

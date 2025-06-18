@@ -1,0 +1,20 @@
+[2025-06-18T15:29:35.677+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T15:29:35.818+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kse100_forecasting.fetch_inflation manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:35.853+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kse100_forecasting.fetch_inflation manual__2025-06-18T15:29:29.025633+00:00 [queued]>
+[2025-06-18T15:29:35.866+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2025-06-18T15:29:35.936+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_inflation> on 2025-06-18 15:29:29.025633+00:00
+[2025-06-18T15:29:35.948+0000] {standard_task_runner.py:63} INFO - Started process 1694 to run task
+[2025-06-18T15:29:35.965+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'kse100_forecasting', 'fetch_inflation', 'manual__2025-06-18T15:29:29.025633+00:00', '--job-id', '945', '--raw', '--subdir', 'DAGS_FOLDER/kse100_forecasting_dag.py', '--cfg-path', '/tmp/tmpgvyzy271']
+[2025-06-18T15:29:36.081+0000] {standard_task_runner.py:91} INFO - Job 945: Subtask fetch_inflation
+[2025-06-18T15:29:36.198+0000] {task_command.py:426} INFO - Running <TaskInstance: kse100_forecasting.fetch_inflation manual__2025-06-18T15:29:29.025633+00:00 [running]> on host f55656462970
+[2025-06-18T15:29:36.322+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kse100_forecasting' AIRFLOW_CTX_TASK_ID='fetch_inflation' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T15:29:29.025633+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T15:29:29.025633+00:00'
+[2025-06-18T15:29:36.325+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T15:29:36.342+0000] {ingest.py:130} INFO - Fetching 'INFLATION_YOY' from IMF (ID: PCPI_IX)...
+[2025-06-18T15:29:37.231+0000] {ingest.py:171} INFO - Saved INFLATION_YOY data to /opt/***/dataKse/raw/INFLATION.csv
+[2025-06-18T15:29:37.232+0000] {ingest.py:172} INFO - Date range: 1957-01-01 to 2025-05-01
+[2025-06-18T15:29:37.233+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/dataKse/raw/INFLATION.csv
+[2025-06-18T15:29:37.233+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T15:29:37.253+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=kse100_forecasting, task_id=fetch_inflation, run_id=manual__2025-06-18T15:29:29.025633+00:00, execution_date=20250618T152929, start_date=20250618T152935, end_date=20250618T152937
+[2025-06-18T15:29:37.270+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T15:29:37.294+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T15:29:37.297+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

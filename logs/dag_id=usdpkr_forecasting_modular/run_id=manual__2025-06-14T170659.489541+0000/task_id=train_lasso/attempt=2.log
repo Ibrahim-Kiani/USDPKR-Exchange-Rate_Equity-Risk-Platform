@@ -1,0 +1,38 @@
+[2025-06-14T17:23:38.285+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T17:23:38.311+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-14T17:06:59.489541+00:00 [queued]>
+[2025-06-14T17:23:38.320+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-14T17:06:59.489541+00:00 [queued]>
+[2025-06-14T17:23:38.321+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2025-06-14T17:23:38.336+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_lasso> on 2025-06-14 17:06:59.489541+00:00
+[2025-06-14T17:23:38.342+0000] {standard_task_runner.py:63} INFO - Started process 1612 to run task
+[2025-06-14T17:23:38.345+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'train_lasso', 'manual__2025-06-14T17:06:59.489541+00:00', '--job-id', '440', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpe5_cnf2r']
+[2025-06-14T17:23:38.347+0000] {standard_task_runner.py:91} INFO - Job 440: Subtask train_lasso
+[2025-06-14T17:23:38.390+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-14T17:06:59.489541+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T17:23:38.500+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='train_lasso' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T17:06:59.489541+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T17:06:59.489541+00:00'
+[2025-06-14T17:23:38.501+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T17:23:38.531+0000] {model_steps.py:816} ERROR - Error in train_lasso_model: Empty data loaded. X_train shape: (0, 45), y_train shape: (0, 1)
+[2025-06-14T17:23:38.531+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T17:23:38.532+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/model_steps.py", line 794, in train_lasso_model
+    raise ValueError(f"Empty data loaded. X_train shape: {X_train.shape}, y_train shape: {y_train.shape}")
+ValueError: Empty data loaded. X_train shape: (0, 45), y_train shape: (0, 1)
+[2025-06-14T17:23:38.546+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=usdpkr_forecasting_modular, task_id=train_lasso, run_id=manual__2025-06-14T17:06:59.489541+00:00, execution_date=20250614T170659, start_date=20250614T172338, end_date=20250614T172338
+[2025-06-14T17:23:38.556+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 440 for task train_lasso (Empty data loaded. X_train shape: (0, 45), y_train shape: (0, 1); 1612)
+[2025-06-14T17:23:38.598+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T17:23:38.620+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T17:23:38.622+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

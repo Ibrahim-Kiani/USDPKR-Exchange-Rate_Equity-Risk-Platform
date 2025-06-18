@@ -1,0 +1,1 @@
+[2025-06-18T13:32:39.760+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: usdpkr_forecasting_modular.train_lasso manual__2025-06-18T13:24:27.904551+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

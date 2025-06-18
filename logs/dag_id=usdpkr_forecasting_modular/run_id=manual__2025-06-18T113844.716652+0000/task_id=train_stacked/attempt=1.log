@@ -1,0 +1,17 @@
+[2025-06-18T11:48:21.489+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-18T11:48:21.520+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T11:38:44.716652+00:00 [queued]>
+[2025-06-18T11:48:21.530+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T11:38:44.716652+00:00 [queued]>
+[2025-06-18T11:48:21.530+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-18T11:48:21.543+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_stacked> on 2025-06-18 11:38:44.716652+00:00
+[2025-06-18T11:48:21.549+0000] {standard_task_runner.py:63} INFO - Started process 3777 to run task
+[2025-06-18T11:48:21.551+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'train_stacked', 'manual__2025-06-18T11:38:44.716652+00:00', '--job-id', '645', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmp0o8i9kqk']
+[2025-06-18T11:48:21.554+0000] {standard_task_runner.py:91} INFO - Job 645: Subtask train_stacked
+[2025-06-18T11:48:21.596+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.train_stacked manual__2025-06-18T11:38:44.716652+00:00 [running]> on host 9c4806d77c92
+[2025-06-18T11:48:21.702+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='train_stacked' AIRFLOW_CTX_EXECUTION_DATE='2025-06-18T11:38:44.716652+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-18T11:38:44.716652+00:00'
+[2025-06-18T11:48:21.703+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-18T11:48:26.259+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/models/stacked_model.pkl
+[2025-06-18T11:48:26.259+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-18T11:48:26.279+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting_modular, task_id=train_stacked, run_id=manual__2025-06-18T11:38:44.716652+00:00, execution_date=20250618T113844, start_date=20250618T114821, end_date=20250618T114826
+[2025-06-18T11:48:26.310+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-18T11:48:26.334+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-18T11:48:26.336+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

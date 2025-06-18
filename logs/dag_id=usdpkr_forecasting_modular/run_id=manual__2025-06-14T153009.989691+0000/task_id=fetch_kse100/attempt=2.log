@@ -1,0 +1,64 @@
+[2025-06-14T15:35:28.854+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T15:35:28.905+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_kse100 manual__2025-06-14T15:30:09.989691+00:00 [queued]>
+[2025-06-14T15:35:28.918+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.fetch_kse100 manual__2025-06-14T15:30:09.989691+00:00 [queued]>
+[2025-06-14T15:35:28.919+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-06-14T15:35:28.937+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_kse100> on 2025-06-14 15:30:09.989691+00:00
+[2025-06-14T15:35:28.951+0000] {standard_task_runner.py:63} INFO - Started process 696 to run task
+[2025-06-14T15:35:28.956+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'fetch_kse100', 'manual__2025-06-14T15:30:09.989691+00:00', '--job-id', '203', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmp3pcqx0q9']
+[2025-06-14T15:35:28.962+0000] {standard_task_runner.py:91} INFO - Job 203: Subtask fetch_kse100
+[2025-06-14T15:35:29.041+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.fetch_kse100 manual__2025-06-14T15:30:09.989691+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T15:35:29.162+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='fetch_kse100' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T15:30:09.989691+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T15:30:09.989691+00:00'
+[2025-06-14T15:35:29.165+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T15:35:29.178+0000] {ingest.py:65} INFO - Fetching ^KSE from Yahoo Finance...
+[2025-06-14T15:35:32.260+0000] {ingest.py:112} ERROR - Error fetching ^KSE: Invalid frequency: ME
+[2025-06-14T15:35:32.260+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T15:35:32.261+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "offsets.pyx", line 4447, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'ME'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "offsets.pyx", line 4549, in pandas._libs.tslibs.offsets.to_offset
+  File "offsets.pyx", line 4453, in pandas._libs.tslibs.offsets._get_offset
+ValueError: Invalid frequency: ME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/inflation_modules/ingest.py", line 87, in fetch_yahoo_finance
+    df = df[[price_col]].resample('ME').last()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 9439, in resample
+    return get_resampler(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/resample.py", line 1969, in get_resampler
+    tg = TimeGrouper(**kwds)
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/resample.py", line 2046, in __init__
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "offsets.pyx", line 4460, in pandas._libs.tslibs.offsets.to_offset
+  File "offsets.pyx", line 4557, in pandas._libs.tslibs.offsets.to_offset
+ValueError: Invalid frequency: ME
+[2025-06-14T15:35:32.273+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=usdpkr_forecasting_modular, task_id=fetch_kse100, run_id=manual__2025-06-14T15:30:09.989691+00:00, execution_date=20250614T153009, start_date=20250614T153528, end_date=20250614T153532
+[2025-06-14T15:35:32.285+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 203 for task fetch_kse100 (Invalid frequency: ME; 696)
+[2025-06-14T15:35:32.304+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T15:35:32.322+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T15:35:32.324+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

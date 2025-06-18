@@ -1,0 +1,17 @@
+[2025-06-14T16:34:14.060+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T16:34:14.093+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.ensure_output_dir manual__2025-06-14T16:34:11.679132+00:00 [queued]>
+[2025-06-14T16:34:14.103+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting_modular.ensure_output_dir manual__2025-06-14T16:34:11.679132+00:00 [queued]>
+[2025-06-14T16:34:14.104+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-06-14T16:34:14.119+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): ensure_output_dir> on 2025-06-14 16:34:11.679132+00:00
+[2025-06-14T16:34:14.131+0000] {standard_task_runner.py:63} INFO - Started process 208 to run task
+[2025-06-14T16:34:14.133+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting_modular', 'ensure_output_dir', 'manual__2025-06-14T16:34:11.679132+00:00', '--job-id', '288', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpg0obtwy0']
+[2025-06-14T16:34:14.139+0000] {standard_task_runner.py:91} INFO - Job 288: Subtask ensure_output_dir
+[2025-06-14T16:34:14.241+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting_modular.ensure_output_dir manual__2025-06-14T16:34:11.679132+00:00 [running]> on host 1ada37a5d2dc
+[2025-06-14T16:34:14.379+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting_modular' AIRFLOW_CTX_TASK_ID='ensure_output_dir' AIRFLOW_CTX_EXECUTION_DATE='2025-06-14T16:34:11.679132+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-14T16:34:11.679132+00:00'
+[2025-06-14T16:34:14.380+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T16:34:14.412+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/models
+[2025-06-14T16:34:14.413+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T16:34:14.441+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting_modular, task_id=ensure_output_dir, run_id=manual__2025-06-14T16:34:11.679132+00:00, execution_date=20250614T163411, start_date=20250614T163414, end_date=20250614T163414
+[2025-06-14T16:34:14.480+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-14T16:34:14.497+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T16:34:14.499+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
