@@ -1,6 +1,6 @@
 # KSE-100 & USD/PKR Forecasting Pipeline
 
-A modular data pipeline and machine learning system for forecasting the KSE-100 index and the USD/PKR exchange rate using macroeconomic indicators. The project leverages Apache Airflow for orchestration, supports robust feature engineering, and outputs results for visualization in PowerBI.
+A modular data pipeline and machine learning system for forecasting the KSE-100 index and the USD/PKR exchange rate using macroeconomic indicators. The project leverages Apache Airflow for orchestration, supports robust feature engineering, and outputs results for visualization in Streamlit.
 
 ---
 
@@ -15,7 +15,7 @@ This project implements an end-to-end pipeline for financial forecasting using m
 - **Automated Data Ingestion**: Loads macroeconomic and market data from CSVs (expandable to APIs)
 - **Data Transformation**: Cleans, merges, and engineers features for time series forecasting
 - **Feature Engineering**: Creates lagged, rolling, and cyclical features
-- **Multiple Models**: Supports Multiple Linear Regression, Random Forest, SVR, and Lasso
+- **Multiple Models**: Supports LSTM, ARIMAX, GBRegressor, and Lasso
 - **Model Evaluation**: Compares models using RMSE, MAE, and R²
 - **Airflow Integration**: Orchestrates the pipeline with modular DAGs
 - **Streamlit Dashboard**: Outputs formatted data for dashboarding
