@@ -1,0 +1,19 @@
+[2025-06-19T09:42:41.670+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-19T09:42:41.699+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting.train_stacked manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:41.706+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting.train_stacked manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:41.707+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-19T09:42:41.722+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_stacked> on 2025-06-19 09:42:18.218266+00:00
+[2025-06-19T09:42:41.727+0000] {standard_task_runner.py:63} INFO - Started process 2544 to run task
+[2025-06-19T09:42:41.729+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting', 'train_stacked', 'manual__2025-06-19T09:42:18.218266+00:00', '--job-id', '1148', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpsgxi59jc']
+[2025-06-19T09:42:41.732+0000] {standard_task_runner.py:91} INFO - Job 1148: Subtask train_stacked
+[2025-06-19T09:42:41.770+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting.train_stacked manual__2025-06-19T09:42:18.218266+00:00 [running]> on host fb048d2dbcb2
+[2025-06-19T09:42:41.884+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting' AIRFLOW_CTX_TASK_ID='train_stacked' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T09:42:18.218266+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T09:42:18.218266+00:00'
+[2025-06-19T09:42:41.885+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-19T09:42:45.778+0000] {logging_mixin.py:188} INFO - Stacked: R2=0.6889, MSE=577.7171, MAE=14.4484
+[2025-06-19T09:42:45.814+0000] {logging_mixin.py:188} INFO - Full dataset predictions saved to usdpkr_stacked_full_predictions.csv
+[2025-06-19T09:42:45.815+0000] {python.py:237} INFO - Done. Returned value was: ('/opt/***/data/models/usdpkr_stacked_model.pkl', '/opt/***/data/models/usdpkr_stacked_metrics.csv')
+[2025-06-19T09:42:45.815+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-19T09:42:45.837+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting, task_id=train_stacked, run_id=manual__2025-06-19T09:42:18.218266+00:00, execution_date=20250619T094218, start_date=20250619T094241, end_date=20250619T094245
+[2025-06-19T09:42:45.874+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-19T09:42:45.889+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-19T09:42:45.891+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

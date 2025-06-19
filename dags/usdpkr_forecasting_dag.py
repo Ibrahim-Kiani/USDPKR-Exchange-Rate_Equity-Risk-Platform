@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.models import Variable
-from inflation_modules import ingest, transform, model_steps
+from usdpkr_modules import ingest, transform, model_steps
 import logging
 
 # Default arguments

@@ -14,9 +14,9 @@ default_args = {
     'max_retry_delay': timedelta(minutes=10),  # Maximum retry delay
 }
 
-data_raw_dir = '/opt/airflow/dataKse/raw'
-data_transformed_dir = '/opt/airflow/dataKse/transformed'
-data_models_dir = '/opt/airflow/dataKse/models'
+data_raw_dir = '/opt/airflow/data/raw'
+data_transformed_dir = '/opt/airflow/data/transformed'
+data_models_dir = '/opt/airflow/data/models'
 
 def handle_ingestion_error(context):
     """Handle ingestion task errors."""

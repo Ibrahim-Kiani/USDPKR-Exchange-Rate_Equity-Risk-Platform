@@ -34,7 +34,7 @@ inflation forecasting/
 │   │   ├── transform.py
 │   │   ├── model_steps.py
 │   │   └── model.py
-│   └── inflation_modules/                # (Legacy/alternative) inflation pipeline modules
+│   └── inflation_modules/                # Modular pipeline for USDPKR-Exchange-rate 
 │       ├── ingest.py
 │       ├── transform.py
 │       ├── model_steps.py
@@ -58,10 +58,10 @@ inflation forecasting/
 1. **Data Ingestion**: Loads CSVs for KSE-100, USD/PKR, macroeconomic indicators (oil, gold, forex reserves, etc.)
 2. **Data Transformation**: Cleans, merges, and aligns data on a monthly basis; handles missing values and outliers
 3. **Feature Engineering**: Adds lagged, rolling, cyclical, and economic features
-4. **Model Training**: Trains and evaluates multiple models (MLR, Random Forest, SVR, Lasso)
+4. **Model Training**: Trains and evaluates multiple models (LSTM, ARIMAX, GBRegressor, Lasso) and stacks them on a LinearRegression meta model.
 5. **Model Evaluation**: Outputs metrics and predictions for comparison
 6. **Serialization**: Saves models, metrics, and selected features for downstream use
-7. **Visualization**: Outputs CSVs for PowerBI dashboarding
+7. **Visualization**: Generates interactive Streamlit dashboard and deploys automatically on vercel. 
 
 ---
 
@@ -116,7 +116,7 @@ Or build and start the Airflow stack locally:
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/Ibrahim-Kiani/USDPKR-Exchange-Rate_Equity-Risk-Platform.git
 cd inflation\ forecasting
 
 # Build and start the Airflow stack

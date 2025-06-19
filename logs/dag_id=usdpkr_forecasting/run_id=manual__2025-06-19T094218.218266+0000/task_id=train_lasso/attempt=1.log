@@ -1,0 +1,19 @@
+[2025-06-19T09:42:41.672+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-19T09:42:41.699+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting.train_lasso manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:41.706+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting.train_lasso manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:41.707+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-19T09:42:41.721+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_lasso> on 2025-06-19 09:42:18.218266+00:00
+[2025-06-19T09:42:41.726+0000] {standard_task_runner.py:63} INFO - Started process 2543 to run task
+[2025-06-19T09:42:41.729+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting', 'train_lasso', 'manual__2025-06-19T09:42:18.218266+00:00', '--job-id', '1149', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpmuogy92t']
+[2025-06-19T09:42:41.731+0000] {standard_task_runner.py:91} INFO - Job 1149: Subtask train_lasso
+[2025-06-19T09:42:41.770+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting.train_lasso manual__2025-06-19T09:42:18.218266+00:00 [running]> on host fb048d2dbcb2
+[2025-06-19T09:42:41.894+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting' AIRFLOW_CTX_TASK_ID='train_lasso' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T09:42:18.218266+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T09:42:18.218266+00:00'
+[2025-06-19T09:42:41.895+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-19T09:42:42.180+0000] {logging_mixin.py:188} INFO - Lasso: R2=0.6181, MSE=709.1759, MAE=21.8216
+[2025-06-19T09:42:42.211+0000] {logging_mixin.py:188} INFO - Full dataset predictions saved to usdpkr_lasso_full_predictions.csv
+[2025-06-19T09:42:42.211+0000] {python.py:237} INFO - Done. Returned value was: ('/opt/***/data/models/usdpkr_lasso_model.pkl', '/opt/***/data/models/usdpkr_lasso_metrics.csv')
+[2025-06-19T09:42:42.212+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-19T09:42:42.235+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting, task_id=train_lasso, run_id=manual__2025-06-19T09:42:18.218266+00:00, execution_date=20250619T094218, start_date=20250619T094241, end_date=20250619T094242
+[2025-06-19T09:42:42.262+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-19T09:42:42.275+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-19T09:42:42.277+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

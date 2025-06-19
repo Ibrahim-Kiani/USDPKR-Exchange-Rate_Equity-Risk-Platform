@@ -1,0 +1,19 @@
+[2025-06-19T10:40:31.589+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-19T10:40:31.619+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kse100_forecasting.train_lasso manual__2025-06-19T10:40:08.644278+00:00 [queued]>
+[2025-06-19T10:40:31.627+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kse100_forecasting.train_lasso manual__2025-06-19T10:40:08.644278+00:00 [queued]>
+[2025-06-19T10:40:31.628+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-06-19T10:40:31.643+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_lasso> on 2025-06-19 10:40:08.644278+00:00
+[2025-06-19T10:40:31.649+0000] {standard_task_runner.py:63} INFO - Started process 5243 to run task
+[2025-06-19T10:40:31.652+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'kse100_forecasting', 'train_lasso', 'manual__2025-06-19T10:40:08.644278+00:00', '--job-id', '1178', '--raw', '--subdir', 'DAGS_FOLDER/kse100_forecasting_dag.py', '--cfg-path', '/tmp/tmp9j3n_z_5']
+[2025-06-19T10:40:31.655+0000] {standard_task_runner.py:91} INFO - Job 1178: Subtask train_lasso
+[2025-06-19T10:40:31.696+0000] {task_command.py:426} INFO - Running <TaskInstance: kse100_forecasting.train_lasso manual__2025-06-19T10:40:08.644278+00:00 [running]> on host fb048d2dbcb2
+[2025-06-19T10:40:31.813+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kse100_forecasting' AIRFLOW_CTX_TASK_ID='train_lasso' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T10:40:08.644278+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T10:40:08.644278+00:00'
+[2025-06-19T10:40:31.814+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-19T10:40:32.003+0000] {logging_mixin.py:188} INFO - Lasso: R2=0.7009, MSE=7546242.7431, MAE=2120.6918
+[2025-06-19T10:40:32.036+0000] {logging_mixin.py:188} INFO - Full dataset predictions saved to kse_lasso_full_predictions.csv
+[2025-06-19T10:40:32.037+0000] {python.py:237} INFO - Done. Returned value was: ('/opt/***/dataKse/models/kse_lasso_model.pkl', '/opt/***/dataKse/models/kse_lasso_metrics.csv')
+[2025-06-19T10:40:32.037+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-19T10:40:32.065+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=kse100_forecasting, task_id=train_lasso, run_id=manual__2025-06-19T10:40:08.644278+00:00, execution_date=20250619T104008, start_date=20250619T104031, end_date=20250619T104032
+[2025-06-19T10:40:32.106+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-19T10:40:32.120+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-19T10:40:32.122+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

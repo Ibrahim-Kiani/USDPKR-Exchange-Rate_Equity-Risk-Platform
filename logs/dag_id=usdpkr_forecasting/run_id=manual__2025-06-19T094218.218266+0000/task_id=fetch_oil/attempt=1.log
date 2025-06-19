@@ -1,0 +1,20 @@
+[2025-06-19T09:42:28.801+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-19T09:42:28.884+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_oil manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:28.917+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: usdpkr_forecasting.fetch_oil manual__2025-06-19T09:42:18.218266+00:00 [queued]>
+[2025-06-19T09:42:28.935+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2025-06-19T09:42:29.000+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_oil> on 2025-06-19 09:42:18.218266+00:00
+[2025-06-19T09:42:29.017+0000] {standard_task_runner.py:63} INFO - Started process 2479 to run task
+[2025-06-19T09:42:29.020+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'usdpkr_forecasting', 'fetch_oil', 'manual__2025-06-19T09:42:18.218266+00:00', '--job-id', '1144', '--raw', '--subdir', 'DAGS_FOLDER/usdpkr_forecasting_dag.py', '--cfg-path', '/tmp/tmpnsp19ifh']
+[2025-06-19T09:42:29.024+0000] {standard_task_runner.py:91} INFO - Job 1144: Subtask fetch_oil
+[2025-06-19T09:42:29.112+0000] {task_command.py:426} INFO - Running <TaskInstance: usdpkr_forecasting.fetch_oil manual__2025-06-19T09:42:18.218266+00:00 [running]> on host fb048d2dbcb2
+[2025-06-19T09:42:29.259+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='usdpkr_forecasting' AIRFLOW_CTX_TASK_ID='fetch_oil' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T09:42:18.218266+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T09:42:18.218266+00:00'
+[2025-06-19T09:42:29.268+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-19T09:42:29.285+0000] {ingest.py:65} INFO - Fetching CL=F from Yahoo Finance...
+[2025-06-19T09:42:32.220+0000] {ingest.py:106} INFO - Saved CL=F data to /opt/***/data/raw/OIL.csv
+[2025-06-19T09:42:32.221+0000] {ingest.py:107} INFO - Date range: 2000-08-31 to 2025-06-30
+[2025-06-19T09:42:32.221+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/raw/OIL.csv
+[2025-06-19T09:42:32.222+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-19T09:42:32.240+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=usdpkr_forecasting, task_id=fetch_oil, run_id=manual__2025-06-19T09:42:18.218266+00:00, execution_date=20250619T094218, start_date=20250619T094228, end_date=20250619T094232
+[2025-06-19T09:42:32.295+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-19T09:42:32.317+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-19T09:42:32.319+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
