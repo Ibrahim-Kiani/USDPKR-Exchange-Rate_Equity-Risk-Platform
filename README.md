@@ -18,7 +18,7 @@ This project implements an end-to-end pipeline for financial forecasting using m
 - **Multiple Models**: Supports Multiple Linear Regression, Random Forest, SVR, and Lasso
 - **Model Evaluation**: Compares models using RMSE, MAE, and R²
 - **Airflow Integration**: Orchestrates the pipeline with modular DAGs
-- **PowerBI Visualization**: Outputs formatted data for dashboarding
+- **Streamlit Dashboard**: Outputs formatted data for dashboarding
 
 ---
 
@@ -136,10 +136,12 @@ See `requirements.txt` for a full list. Key packages:
 
 ---
 
-## PowerBI Visualization
+## Streamlit Visualization
 
-- Use `data/model_output/model_comparison.csv` and `model_predictions.csv` for dashboarding
-- Example dashboards: see `images/pipeline_workflow.png` and `images/powerbi_dashboard.png`
+- Go to the main directory and call
+```
+    streamlit run dashboard.py
+```
 
 ---
 
