@@ -3967,3 +3967,38 @@
 [2025-06-19T13:39:10.779+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:10.779+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-06-19T13:39:10.797+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:10.797+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
 [2025-06-19T13:39:10.814+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.582 seconds
+[2025-06-19T13:39:41.030+0000] {processor.py:161} INFO - Started process (PID=12863) to work on /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:39:41.031+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/kse100_forecasting_dag.py for tasks to queue
+[2025-06-19T13:39:41.033+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:41.033+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:39:42.674+0000] {processor.py:840} INFO - DAG(s) 'kse100_forecasting' retrieved from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:39:42.700+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:42.700+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:39:42.721+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:42.721+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:39:42.745+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.721 seconds
+[2025-06-19T13:40:13.218+0000] {processor.py:161} INFO - Started process (PID=12885) to work on /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:13.219+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/kse100_forecasting_dag.py for tasks to queue
+[2025-06-19T13:40:13.220+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:13.220+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:14.673+0000] {processor.py:840} INFO - DAG(s) 'kse100_forecasting' retrieved from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:14.696+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:14.695+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:40:14.713+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:14.713+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:40:14.729+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.517 seconds
+[2025-06-19T13:40:44.931+0000] {processor.py:161} INFO - Started process (PID=12907) to work on /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:44.932+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/kse100_forecasting_dag.py for tasks to queue
+[2025-06-19T13:40:44.934+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:44.934+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:46.335+0000] {processor.py:840} INFO - DAG(s) 'kse100_forecasting' retrieved from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:40:46.361+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:46.361+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:40:46.380+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:46.379+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:40:46.398+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.473 seconds
+[2025-06-19T13:41:16.602+0000] {processor.py:161} INFO - Started process (PID=12929) to work on /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:16.603+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/kse100_forecasting_dag.py for tasks to queue
+[2025-06-19T13:41:16.605+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:16.605+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:18.209+0000] {processor.py:840} INFO - DAG(s) 'kse100_forecasting' retrieved from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:18.262+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:18.261+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:41:18.283+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:18.283+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:41:18.307+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.711 seconds
+[2025-06-19T13:41:48.523+0000] {processor.py:161} INFO - Started process (PID=12951) to work on /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:48.524+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/kse100_forecasting_dag.py for tasks to queue
+[2025-06-19T13:41:48.526+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:48.525+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:49.900+0000] {processor.py:840} INFO - DAG(s) 'kse100_forecasting' retrieved from /opt/airflow/dags/kse100_forecasting_dag.py
+[2025-06-19T13:41:49.924+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:49.924+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:41:49.942+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:49.942+0000] {dag.py:3954} INFO - Setting next_dagrun for kse100_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:41:49.959+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/kse100_forecasting_dag.py took 1.442 seconds

@@ -29731,3 +29731,32 @@ File Path                                    PID    Runtime      # DAGs    # Err
 /opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.69s           2025-06-19T13:37:51
 /opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.50s           2025-06-19T13:38:07
 ================================================================================
+[2025-06-19T13:38:50.093+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.75s           2025-06-19T13:38:39
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.48s           2025-06-19T13:38:23
+================================================================================
+[2025-06-19T13:39:20.378+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.62s           2025-06-19T13:39:10
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.49s           2025-06-19T13:38:55
+================================================================================
+[2025-06-19T13:39:43.773+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-19T13:39:43.974+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-19T13:39:51.027+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.76s           2025-06-19T13:39:42
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.54s           2025-06-19T13:39:26
+================================================================================

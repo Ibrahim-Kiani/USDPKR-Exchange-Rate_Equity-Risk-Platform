@@ -3960,3 +3960,38 @@
 [2025-06-19T13:38:55.197+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:38:55.197+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-06-19T13:38:55.214+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:38:55.214+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
 [2025-06-19T13:38:55.230+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.460 seconds
+[2025-06-19T13:39:25.440+0000] {processor.py:161} INFO - Started process (PID=12852) to work on /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:25.441+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/usdpkr_forecasting_dag.py for tasks to queue
+[2025-06-19T13:39:25.442+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:25.442+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:26.859+0000] {processor.py:840} INFO - DAG(s) 'usdpkr_forecasting' retrieved from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:26.886+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:26.886+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:39:26.908+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:26.908+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:39:26.937+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.503 seconds
+[2025-06-19T13:39:57.096+0000] {processor.py:161} INFO - Started process (PID=12874) to work on /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:57.097+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/usdpkr_forecasting_dag.py for tasks to queue
+[2025-06-19T13:39:57.099+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:57.099+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:58.480+0000] {processor.py:840} INFO - DAG(s) 'usdpkr_forecasting' retrieved from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:39:58.505+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:58.505+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:39:58.523+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:39:58.523+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:39:58.539+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.450 seconds
+[2025-06-19T13:40:28.786+0000] {processor.py:161} INFO - Started process (PID=12896) to work on /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:40:28.787+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/usdpkr_forecasting_dag.py for tasks to queue
+[2025-06-19T13:40:28.789+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:28.788+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:40:30.156+0000] {processor.py:840} INFO - DAG(s) 'usdpkr_forecasting' retrieved from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:40:30.180+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:30.180+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:40:30.197+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:40:30.197+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:40:30.213+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.433 seconds
+[2025-06-19T13:41:00.428+0000] {processor.py:161} INFO - Started process (PID=12918) to work on /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:00.429+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/usdpkr_forecasting_dag.py for tasks to queue
+[2025-06-19T13:41:00.430+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:00.430+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:01.774+0000] {processor.py:840} INFO - DAG(s) 'usdpkr_forecasting' retrieved from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:01.797+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:01.796+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:41:01.814+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:01.814+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:41:01.829+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.408 seconds
+[2025-06-19T13:41:32.048+0000] {processor.py:161} INFO - Started process (PID=12940) to work on /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:32.049+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/usdpkr_forecasting_dag.py for tasks to queue
+[2025-06-19T13:41:32.051+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:32.051+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:33.607+0000] {processor.py:840} INFO - DAG(s) 'usdpkr_forecasting' retrieved from /opt/airflow/dags/usdpkr_forecasting_dag.py
+[2025-06-19T13:41:33.636+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:33.636+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-19T13:41:33.659+0000] {logging_mixin.py:188} INFO - [2025-06-19T13:41:33.658+0000] {dag.py:3954} INFO - Setting next_dagrun for usdpkr_forecasting to 2025-06-01 00:00:00+00:00, run_after=2025-07-01 00:00:00+00:00
+[2025-06-19T13:41:33.680+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/usdpkr_forecasting_dag.py took 1.638 seconds

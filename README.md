@@ -25,7 +25,7 @@ This project implements an end-to-end pipeline for financial forecasting using m
 ## Project Structure
 
 ```
-inflation forecasting/
+Project directory/
 ├── dags/
 │   ├── kse100_forecasting_dag.py         # Airflow DAG for KSE-100 forecasting
 │   ├── usdpkr_forecasting_dag.py         # Airflow DAG for USD/PKR forecasting
