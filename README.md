@@ -81,7 +81,14 @@ Project directory/
 
 Each DAG uses modular steps from `dags/kse_modules/` or `dags/inflation_modules/` for ingestion, transformation, and modeling.
 
+
 ---
+
+## Streamlit Dashboard
+
+Below is a sample dashboard generated from the model outputs, visualized in Streamlit through interactive graphs made by Plotly:
+
+![Sample Dashboard](dashboard.png)
 
 ## DAG Visualizations
 
@@ -163,3 +170,5 @@ Model performance is output as CSV and JSON for easy comparison and visualizatio
 
 - Based on the original inflation forecasting pipeline by [original authors/your team]
 - See LICENSE for details
+
+

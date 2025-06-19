@@ -29805,3 +29805,105 @@ File Path                                    PID    Runtime      # DAGs    # Err
 /opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.56s           2025-06-19T13:42:21
 /opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.52s           2025-06-19T13:42:05
 ================================================================================
+[2025-06-19T13:42:54.097+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.51s           2025-06-19T13:42:53
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.46s           2025-06-19T13:42:37
+================================================================================
+[2025-06-19T13:43:24.644+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py  13017  1.01s             1           0  1.51s           2025-06-19T13:42:53
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.46s           2025-06-19T13:43:08
+================================================================================
+[2025-06-19T13:43:55.289+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.70s           2025-06-19T13:43:40
+/opt/airflow/dags/kse100_forecasting_dag.py  13039  0.00s             1           0  1.48s           2025-06-19T13:43:25
+================================================================================
+[2025-06-19T13:44:26.060+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.62s           2025-06-19T13:43:56
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.44s           2025-06-19T13:44:12
+================================================================================
+[2025-06-19T13:44:43.823+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-19T13:44:44.005+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-19T13:44:56.082+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.52s           2025-06-19T13:44:43
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.44s           2025-06-19T13:44:28
+================================================================================
+[2025-06-19T13:45:26.311+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.49s           2025-06-19T13:45:00
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.46s           2025-06-19T13:45:15
+================================================================================
+[2025-06-19T13:45:56.380+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.49s           2025-06-19T13:45:47
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.47s           2025-06-19T13:45:31
+================================================================================
+[2025-06-19T13:46:26.638+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.55s           2025-06-19T13:46:03
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.49s           2025-06-19T13:46:18
+================================================================================
+[2025-06-19T13:46:56.717+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.51s           2025-06-19T13:46:50
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.50s           2025-06-19T13:46:35
+================================================================================
+[2025-06-19T13:47:27.198+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.73s           2025-06-19T13:47:07
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.43s           2025-06-19T13:47:22
+================================================================================
+[2025-06-19T13:47:57.912+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/kse100_forecasting_dag.py                           1           0  1.54s           2025-06-19T13:47:38
+/opt/airflow/dags/usdpkr_forecasting_dag.py                           1           0  1.44s           2025-06-19T13:47:53
+================================================================================
+[2025-06-19T13:48:19.558+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
